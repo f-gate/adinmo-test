@@ -9,11 +9,8 @@ COPY . ./
 
 #Actix
 EXPOSE 8080
-#RUN mysql -u root -p Password123! < ./scripts/sql_init.sql
 
-RUN cargo build
-
-HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:8080/ || exit 1
+RUN cargo build --release
 
 # Command to run the application
-CMD ["./target/debug/adinmo-test"]
+CMD ["./target/release/adinmo-test"]

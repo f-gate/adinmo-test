@@ -16,5 +16,5 @@ futures = "0.3.28"
 dotenv = "0.15.0"
 db = { path="./db"}
 log = "0.4.20"
-derive_more = "0.99.17"
 httpmock = "0.6.8"
+derive_more = "0.99.17"
