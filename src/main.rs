@@ -84,7 +84,8 @@ async fn run(state: web::Data<State<QueryType>>) -> Result<String, libs::error::
     }
 
     let mut most_common = RandomNumberHandler::<QueryType>::get_most_common_numbers(&all_numbers);
-    Ok(serde_json::to_string(&most_common.sort())?)
+    most_common.sort();
+    Ok(serde_json::to_string(&most_common)?)
 }
 
 mod entities;
